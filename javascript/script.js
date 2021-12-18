@@ -1,7 +1,7 @@
 const start = () => {
     setTimeout(function() {
         confetti.start()
-    }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+    }, 300);
 };
 
 //  for stopping the confetti 
@@ -9,7 +9,7 @@ const start = () => {
 const stop = () => {
     setTimeout(function() {
         confetti.stop()
-    }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+    }, 5000);
 };
 
 function getRandomInt(max) {
@@ -19,6 +19,7 @@ function getRandomInt(max) {
 var sizeWidth = 80;
 var sizeHeight = 30;
 var fontSize = 1.5;
+var left = 30;
 
 function button() {
     let yes = document.querySelector('#yes');
@@ -32,10 +33,12 @@ function button() {
         sizeWidth += 26
         sizeHeight += 10
         fontSize += 0.2
+        left -= 2
 
         yes.style.width = sizeWidth + "px";
         yes.style.height = sizeHeight + "px";
         yes.style.fontSize = fontSize + "em";
+        yes.style.left = left + "%";
     });
 
     yes.addEventListener("click", function() {
